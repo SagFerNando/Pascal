@@ -1,0 +1,25 @@
+program hotel;
+var
+contador, dias: Integer;
+costo: LongInt;
+
+begin
+	Writeln('Cuantos dias se quedo en el hotel'); readln (dias);
+	
+	for contador:=0 to dias do
+		begin
+		if (contador=1) then
+			begin
+			costo:=1200;
+			end
+		else if (contador=0) then
+			begin
+			costo:=0;
+			end
+		else
+			begin
+			costo:= costo+950;
+			end
+		end;
+	Writeln('Su total a pagar es ',costo);
+end.
