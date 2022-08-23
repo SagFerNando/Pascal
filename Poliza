@@ -1,10 +1,15 @@
 program poliza;
 var
 tipo, edad, bebe, lentes, enfermo,salir : Integer;
-costom, costot, costos, costoa: Real
+costom, coston, costot, costos, costoa: Real;
 costo: LongInt;
 
 begin
+	costom:=0;
+	costot:=0;
+	costoa:=0;
+	coston:=0;
+	costos:=0;
 
      Writeln ('Tipo de Poliza 1=A y 2=B  '); readln (tipo);
      Writeln ('La persona bebe alcohol 1= si y 0=no   '); readln (bebe);
@@ -17,10 +22,13 @@ begin
 	else
 		exit;
 	end;
+
+
 	if (lentes=1) then
 		begin
 		costot:=costo*0.05;
 		end;
+
      	if (bebe=1) then
 		begin
 		costom:=costo*0.10;
@@ -29,17 +37,18 @@ begin
 		begin
 		costoa:=costo*0.05;
 		end;
+
      	if (edad>40) then
 		begin
 		costos:=costo*0.20;
-		end;
-	if (edad<=40) then
+		end
+	else
 		begin
 		costos:=costo*0.10;
 		end;
 
-	costos:=costos + costo + costoa + costot + costom;
+	coston:=costos + costo + costoa + costot + costom;
      	Writeln ('costo total: ');
-     	Writeln (costot);
+     	Writeln (coston);
 
 end.
